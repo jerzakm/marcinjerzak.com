@@ -20,14 +20,16 @@
   "homepage": "https://github.com/jerzakm/marcinjerzak.com#readme",
   "devDependencies": {
     "rollup": "^1.23.1",
-    "svelte": "^3.12.1",
     "rollup-plugin-commonjs": "^10.0.1",
     "rollup-plugin-livereload": "^1.0.4",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-svelte": "^5.1.0",
     "rollup-watch": "^4.3.1",
-    "serve": "^11.1.0"
+    "sass": "^1.23.0",
+    "serve": "^11.1.0",
+    "svelte": "^3.12.1",
+    "svelte-preprocess": "^3.1.2"
   },
   "dependencies": {
     "svelte-spa-router": "^1.2.1"

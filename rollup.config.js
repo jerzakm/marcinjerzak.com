@@ -3,6 +3,7 @@ import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
+import autoPreprocess from 'svelte-preprocess'
 
 export default {
     input: 'src/main.js',
@@ -23,7 +24,8 @@ export default {
             // a separate file  better for performance
             css: css => {
                 css.write('dist/bundle.css')
-            }
+            },
+            preprocess: autoPreprocess()
         }),
 
         // If you have external dependencies installed from
@@ -35,18 +37,18 @@ export default {
         commonjs(),
         serve({
             // Launch in browser (default: false)
-            open: true,           
-           
+            open: true,
+
             // Folder to serve files from
             contentBase: '',
-           
+
             // Multiple folders to serve from
-            contentBase: ['dist'],     
-           
+            contentBase: ['dist'],
+
             // Options used in setting up server
             host: 'localhost',
-            port: 3000,     
-          }),
+            port: 3000,
+        }),
         livereload()
     ]
 }
