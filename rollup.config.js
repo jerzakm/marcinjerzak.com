@@ -3,7 +3,9 @@ import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
-import autoPreprocess from 'svelte-preprocess'
+import postcss from 'rollup-plugin-postcss'
+import scss from 'rollup-plugin-scss'
+import html from 'rollup-plugin-bundle-html'
 
 export default {
     input: 'src/main.js',
@@ -17,6 +19,7 @@ export default {
         exclude: ['node_modules/**']
     },
     plugins: [
+        scss(),
         svelte({
             // enable run-time checks when not in production
             dev: true,
@@ -24,15 +27,26 @@ export default {
             // a separate file  better for performance
             css: css => {
                 css.write('dist/bundle.css')
-            },
-            preprocess: autoPreprocess()
+            }
         }),
-
-        // If you have external dependencies installed from
-        // npm, you'll most likely need these plugins. In
-        // some cases you'll need additional configuration 
-        // consult the documentation for details:
-        // https://github.com/rollup/rollup-plugin-commonjs
+        html({
+            template: 'src/index.html',
+            dest: "dist",
+            filename: 'index.html',
+            inject: 'body'
+        }),
+        postcss({
+            extract: true,
+            minimize: true,
+            use: [
+                ['sass', {
+                    includePaths: [
+                        './src/styles/theme',
+                        './node_modules'
+                    ]
+                }]
+            ]
+        }),
         resolve(),
         commonjs(),
         serve({
@@ -49,6 +63,7 @@ export default {
             host: 'localhost',
             port: 3000,
         }),
+
         livereload()
     ]
 }

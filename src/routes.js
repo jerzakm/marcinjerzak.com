@@ -1,7 +1,6 @@
 import Home from './routes/Home.svelte'
-import Name from './routes/Name.svelte'
-import Wild from './routes/Wild.svelte'
-import Regex from './routes/Regex.svelte'
+import Articles from './routes/Articles.svelte'
+import Projects from './routes/Projects.svelte'
 import NotFound from './routes/NotFound.svelte'
 import Contact from './routes/Contact.svelte'
 
@@ -15,46 +14,19 @@ if (!urlParams.has('routemap')) {
     // This is a key->value pair in which the key is a string of the path.
     // The path is passed to regexparam that does some transformations allowing the use of params and wildcards
     routes = {
-        // Exact path
         '/': Home,
+        '/articles': Articles,
+        '/projects': Projects,
         '/contact': Contact,
-    
-        // Allow children to also signal link activation
-        '/brand': Home,
-        
-        // Using named parameters, with last being optional
-        '/hello/:first/:last?': Name,
-    
-        // Wildcard parameter
-        '/wild': Wild,
-        '/wild/*': Wild,
-    
-        // Catch-all, must be last
         '*': NotFound,
     }
-}
-else {
+} else {
     routes = new Map()
 
-    // Exact path
     routes.set('/', Home)
-
-    // Allow children to also signal link activation
-    routes.set('/brand', Home)
-
-    // Using named parameters, with last being optional
-    routes.set('/hello/:first/:last?', Name)
-
-    // Wildcard parameter
-    routes.set('/wild', Wild)
-    routes.set('/wild/*', Wild)
-
-    // Regular expressions
-    routes.set(/^\/regex\/(.*)?/i, Regex)
-    routes.set(/^\/(pattern|match)(\/[a-z0-9]+)?/i, Regex)
-
-    // Catch-all, must be last
-    routes.set('*', NotFound)
+    routes.set('/projects', Projects)
+    routes.set('/articles', Articles)
+    routes.set('/contact', Contact)
 }
 
 export default routes
