@@ -1,5 +1,5 @@
 <script>
-  import Nav from "./nav/Nav.svelte";
+  import Nav from "./components/Nav.svelte";
   import Router from "svelte-spa-router";
   import {
     link,
