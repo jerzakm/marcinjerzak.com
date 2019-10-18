@@ -46,21 +46,31 @@
   window.onhashchange = () => {
     activeTab = selectActiveTab();
   };
+  let big = false;
 </script>
 
 <style>
-
+  :global(.test) {
+    color: tomato;
+  }
+  .big {
+    font-size: 4em;
+  }
 </style>
 
-<div>
+<div class="test">
   <TabBar
     tabs={['Home', 'Articles', 'Projects', 'Contact']}
     let:tab
     bind:active={activeTab}>
     <!-- Notice that the `tab` property is required! -->
-    <Tab {tab} on:click={() => tabClicked(tab)}>
+    <Tab {tab} on:click={() => tabClicked(tab)} minWidth>
       <Label>{tab}</Label>
     </Tab>
   </TabBar>
   <p>The current page is: {$location}</p>
+  <p class="test">Test1</p>
+  <p class:test={2 < 1}>Test2</p>
+
+  <div class:big>some {big ? 'big' : 'small'} text</div>
 </div>
