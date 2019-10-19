@@ -6,6 +6,7 @@ import livereload from 'rollup-plugin-livereload'
 import postcss from 'rollup-plugin-postcss'
 import scss from 'rollup-plugin-scss'
 import html from 'rollup-plugin-bundle-html'
+import autoPreprocess from 'svelte-preprocess'
 
 export default {
     input: 'src/main.js',
@@ -25,9 +26,10 @@ export default {
             dev: true,
             // we'll extract any component CSS out into
             // a separate file  better for performance
-            css: css => {
-                css.write('dist/bundle.css')
-            }
+            // css: css => {
+            //     css.write('dist/bundle.css')
+            // },
+            preprocess: autoPreprocess()
         }),
         html({
             template: 'src/index.html',

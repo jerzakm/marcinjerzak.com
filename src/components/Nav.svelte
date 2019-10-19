@@ -50,27 +50,22 @@
 </script>
 
 <style>
-  :global(.test) {
-    color: tomato;
-  }
-  .big {
-    font-size: 4em;
+  .navBar {
+    display: flex;
+    align-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
   }
 </style>
 
-<div class="test">
+<div class="navBar">
   <TabBar
     tabs={['Home', 'Articles', 'Projects', 'Contact']}
     let:tab
-    bind:active={activeTab}>
-    <!-- Notice that the `tab` property is required! -->
+    bind:active={activeTab}
+    style="max-width:600px;">
     <Tab {tab} on:click={() => tabClicked(tab)} minWidth>
       <Label>{tab}</Label>
     </Tab>
   </TabBar>
-  <p>The current page is: {$location}</p>
-  <p class="test">Test1</p>
-  <p class:test={2 < 1}>Test2</p>
-
-  <div class:big>some {big ? 'big' : 'small'} text</div>
 </div>
