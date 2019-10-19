@@ -10,7 +10,7 @@ $mdc-theme-secondary: $secondary;
 $mdc-theme-background: $dark;
 $mdc-theme-surface: $dark;
 
-$mdc-theme-error: red;
+$mdc-theme-error: rgb(255, 0, 119);
 
 body {
   background-color: $mdc-theme-background;

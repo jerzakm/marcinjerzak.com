@@ -21,6 +21,9 @@
     font-size: 2.2em;
     font-weight: 600;
   }
+  .small {
+    color: #dddddd69;
+  }
   .green {
     color: #02ff92;
   }
@@ -47,13 +50,13 @@
       and
       <span class="green">love of numbers and data.</span>
     </p>
-    <p>
+    <p class="small">
       Before learning how to make my first hello world program, I've spent tens
       of hours making efficient production lines in games like Factorio,
       obsessing over best possible build for my rpg characters or loosing sleep
       over what I'm going to do next in one of Paradox's grand strategy games.
     </p>
-    <p>
+    <p class="small">
       It took me longer than I care to admit, but eventually I figured out that
       I just enjoy making things that do my work for me and solving problems. As
       it turns out, there's use for such contraptions in the modern world. How

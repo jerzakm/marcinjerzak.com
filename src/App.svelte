@@ -1,5 +1,6 @@
 <script>
   import Nav from "./components/Nav.svelte";
+  import Chat from "./components/Chat.svelte";
   import Router from "svelte-spa-router";
   import {
     link,
@@ -14,5 +15,5 @@
 </script>
 
 <Nav />
-
+<Chat />
 <Router {routes} />
