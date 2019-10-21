@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/jerzakm/marcinjerzak.com#readme",
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-regular-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "rollup": "^1.23.1",
     "rollup-plugin-bundle-html": "^0.2.1",
     "rollup-plugin-commonjs": "^10.0.1",
@@ -35,6 +38,7 @@
     "svelte-preprocess": "^3.1.2"
   },
   "dependencies": {
+    "fa-svelte": "^3.0.0",
     "svelte-material-ui": "^1.0.0-beta.15",
     "svelte-spa-router": "^1.2.1"
   }

@@ -43,7 +43,7 @@
   //Hide Chat container if clicked outside of it
   let chatContainerDiv;
   window.addEventListener("pointerdown", e => {
-    if (!test.contains(e.target)) {
+    if (!chatContainerDiv.contains(e.target)) {
       showChat = false;
     }
   });
@@ -77,7 +77,7 @@
   }
   .chat-bubble {
     background-color: black;
-    min-width: 500px;
+    min-width: 450px;
     display: flex;
     flex-direction: column;
     /* align-items: flex-end; */
