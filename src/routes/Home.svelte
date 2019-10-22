@@ -7,6 +7,7 @@
     faTwitter
   } from "@fortawesome/free-brands-svg-icons";
   import Ripple from "@smui/ripple";
+  import ProjectCard from "../components/ProjectCard.svelte";
 </script>
 
 <style>
@@ -36,6 +37,7 @@
   }
   .home-container {
     /* max-width: 1000px; */
+    width: 100%;
     min-height: 90vh;
     display: flex;
     flex-direction: row;
@@ -65,6 +67,27 @@
     border-radius: 50%;
     font-size: 0.9em;
     margin: 0.15em;
+  }
+
+  .home-projects {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+  }
+
+  .home-projects-card-container {
+    margin: 0 5vw 0 5vw;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .home-projects-card-container :global(.mdc-card) {
+    flex: 1 1 calc(100% * (1 / 4) - 10px - 1px);
   }
 </style>
 
@@ -125,5 +148,16 @@
         <Icon icon={faTwitter} />
       </span>
     </div>
+  </div>
+</section>
+<section class="home-projects">
+  <h1 class="big">Featured projects</h1>
+  <div class="home-projects-card-container">
+    <ProjectCard />
+    <ProjectCard />
+    <ProjectCard />
+    <ProjectCard />
+    <ProjectCard />
+    <ProjectCard />
   </div>
 </section>
