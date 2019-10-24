@@ -8,6 +8,7 @@
   } from "@fortawesome/free-brands-svg-icons";
   import Ripple from "@smui/ripple";
   import ProjectCard from "../components/ProjectCard.svelte";
+  import RecentArticles from "../components/RecentArticles.svelte";
 </script>
 
 <style>
@@ -70,24 +71,28 @@
   }
 
   .home-projects {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    justify-items: center;
-    flex-direction: column;
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    margin: 0 5vw 0 5vw;
   }
 
   .home-projects-card-container {
-    margin: 0 5vw 0 5vw;
     display: flex;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
   }
+
   .home-projects-card-container :global(.mdc-card) {
-    flex: 1 1 calc(100% * (1 / 4) - 10px - 1px);
+    flex: 1 1 calc(100% * (1 / 3) - 10px - 1px);
+  }
+
+  .flex-c-cl-w {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 </style>
 
@@ -106,18 +111,6 @@
       and
       <span class="green">love of numbers and data.</span>
     </p>
-    <!-- <p class="small">
-      Before learning how to make my first hello world program, I've spent tens
-      of hours making efficient production lines in games like Factorio,
-      obsessing over best possible build for my rpg characters or loosing sleep
-      over what I'm going to do next in one of Paradox's grand strategy games.
-    </p>
-    <p class="small">
-      It took me longer than I care to admit, but eventually I figured out that
-      I just enjoy making things that do my work for me and solving problems. As
-      it turns out, there's use for such contraptions in the modern world. How
-      fortuitous!
-    </p> -->
     <div class="home-social">
       <span
         use:Ripple={[true, { unbounded: true, color: 'surface' }]}
@@ -151,13 +144,20 @@
   </div>
 </section>
 <section class="home-projects">
-  <h1 class="big">Featured projects</h1>
-  <div class="home-projects-card-container">
-    <ProjectCard />
-    <ProjectCard />
-    <ProjectCard />
-    <ProjectCard />
-    <ProjectCard />
-    <ProjectCard />
+  <div class="flex-c-cl-w">
+    <h1 class="big fw">Featured projects</h1>
+    <div class="home-projects-card-container">
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+    </div>
+
+  </div>
+  <div class="flex-c-cl-w">
+    <h1 class="big fw">Recent articles</h1>
+    <RecentArticles />
   </div>
 </section>
