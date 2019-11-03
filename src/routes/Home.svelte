@@ -88,7 +88,7 @@
     flex: 1 1 calc(100% * (1 / 3) - 10px - 1px);
   }
 
-  .flex-c-cl-w {
+  .flex-center {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -151,12 +151,10 @@
       <ProjectCard />
       <ProjectCard />
       <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
     </div>
 
   </div>
-  <div class="flex-c-cl-w">
+  <div class="flex-center">
     <h1 class="big fw">Recent articles</h1>
     <RecentArticles />
   </div>

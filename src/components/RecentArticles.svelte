@@ -77,34 +77,12 @@
         </Button>
       </ActionButtons>
       <ActionIcons>
-        <IconButton
-          toggle
-          aria-label="Add to favorites"
-          title="Add to favorites">
-          <Icon class="material-icons" on>favorite</Icon>
-          <Icon class="material-icons">favorite_border</Icon>
-        </IconButton>
+        <Button disabled>
+          <Label>02.09.2019</Label>
+        </Button>
         <IconButton class="material-icons" title="Share">share</IconButton>
-        <IconButton class="material-icons" title="More options">
-          more_vert
-        </IconButton>
       </ActionIcons>
     </Actions>
 
   </Card>
 {/each}
-
-<!-- <Item
-        on:SMUI:action={() => (selectionTwoLine = item.name)}
-        disabled={item.disabled}>
-        <Graphic style="background-image: url(assets/hexedRealms_16x9.png);" />
-        <Text>
-          <PrimaryText>Lorem ipsum dolor sit amet consectetur.</PrimaryText>
-          <SecondaryText>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi cumque
-            modi quod reiciendis fugit hic, voluptate nostrum inventore mollitia
-            officia?
-          </SecondaryText>
-        </Text>
-        <Meta class="material-icons">info</Meta>
-      </Item> -->
