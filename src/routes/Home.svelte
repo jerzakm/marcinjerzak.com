@@ -9,6 +9,9 @@
   import Ripple from "@smui/ripple";
   import ProjectCard from "../components/ProjectCard.svelte";
   import RecentArticles from "../components/RecentArticles.svelte";
+  import { test } from "../f";
+  const g = test();
+  console.log(g);
 </script>
 
 <style>
