@@ -43,3 +43,9 @@ code {
 		font-size: 16px;
 	}
 }
+
+@media (min-width: 480px) {
+    h1 {
+        font-size: 4em;
+    }
+}
