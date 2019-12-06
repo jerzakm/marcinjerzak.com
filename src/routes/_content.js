@@ -1,12 +1,15 @@
 import fs from 'fs';
 import path from 'path';
-// import marked from 'marked';
+import * as MarkdownIt from 'markdown-it'
 
 export function getContent(slug) {
-	const file = `./content/${slug}.md`;
+    const file = `./content/${slug}.md`;
 	if (!fs.existsSync(file)) return null;
 
-	const markdown = fs.readFileSync(file, 'utf-8');
+    const md = new MarkdownIt()
+    const markdown = fs.readFileSync(file, 'utf-8');
+    const markdownRenderResult = md.render(markdown);
+    console.log(markdownRenderResult)
 
 	// const { content, metadata } = process_markdown(markdown);
 
@@ -21,7 +24,7 @@ export function getContent(slug) {
 	// 	html
     // };
 
-    return markdown
+    return markdownRenderResult
 }
 
 // function process_markdown(markdown) {

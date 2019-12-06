@@ -6,6 +6,8 @@
 
 <p>This is the 'about' page. There's not much here.</p>
 
+{post}
+
 <script>
 	export let post;
 </script>
@@ -17,6 +19,7 @@
 			const res = await this.fetch(`about.json`);
 			const data = await res.json();
 			console.log(data)
+			// console.log(data)
 			if (res.status === 200) {
 				return { post: data };
 			} else {

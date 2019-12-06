@@ -7,7 +7,6 @@ export function get(req, res, next) {
 
 	if (process.env.NODE_ENV !== 'production' || !lookup.has(slug)) {
 		const post = getContent('about');
-		// const post = 'test post mdown'
 		lookup.set(slug, JSON.stringify(post));
 	}
 
