@@ -9,7 +9,6 @@ export function getContent(slug) {
     const md = new MarkdownIt()
     const markdown = fs.readFileSync(file, 'utf-8');
     const markdownRenderResult = md.render(markdown);
-    console.log(markdownRenderResult)
 
 	// const { content, metadata } = process_markdown(markdown);
 

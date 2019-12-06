@@ -6,10 +6,10 @@
 
 <p>This is the 'about' page. There's not much here.</p>
 
-{post}
+{@html content}
 
 <script>
-	export let post;
+	export let content;
 </script>
 
 <script context="module">
@@ -18,10 +18,9 @@
 			// this file is called [slug].html
 			const res = await this.fetch(`about.json`);
 			const data = await res.json();
-			console.log(data)
 			// console.log(data)
 			if (res.status === 200) {
-				return { post: data };
+				return { content: data };
 			} else {
 				this.error(res.status, data.message);
 			}
