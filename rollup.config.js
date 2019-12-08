@@ -3,7 +3,9 @@ import replace from '@rollup/plugin-replace';
 import commonjs from 'rollup-plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
 import babel from 'rollup-plugin-babel';
-import { terser } from 'rollup-plugin-terser';
+import {
+	terser
+} from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import sveltePreprocess from 'svelte-preprocess';
@@ -17,12 +19,12 @@ const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/
 
 const preprocess = sveltePreprocess({
 	scss: {
-	  includePaths: ['src'],
+		includePaths: ['src'],
 	},
 	postcss: {
-	  plugins: [require('autoprefixer')],
+		plugins: [require('autoprefixer')],
 	},
-  });
+});
 
 export default {
 	client: {

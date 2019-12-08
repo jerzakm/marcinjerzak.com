@@ -1,11 +1,19 @@
+<script context="module">
+  export async function preload({ params, query }) {
+    const res = await this.fetch(`contact.json`);
+    const data = await res.json();
+    // console.log(data)
+    if (res.status === 200) {
+      return { contact: data.meta };
+    } else {
+      this.error(res.status, data.message);
+    }
+  }
+</script>
+
 <script>
   import SimpleIcon from "../components/SimpleIcon.svelte";
-  import { onMount } from "svelte";
-  let loaded;
-
-  onMount(() => {
-    loaded = true;
-  });
+  export let contact;
 </script>
 
 <style lang="scss">
@@ -63,10 +71,10 @@
     </h3>
   </div>
   <div class="social-container bounce">
-    <SimpleIcon icon={'GitHub'} />
-    <SimpleIcon icon={'Twitter'} />
-    <SimpleIcon icon={'dev.to'} />
-    <SimpleIcon icon={'Itch.io'} />
-    <SimpleIcon icon={'LinkedIn'} />
+    <SimpleIcon icon={'GitHub'} url={contact.GitHub} />
+    <SimpleIcon icon={'Twitter'} url={contact.Twitter} />
+    <SimpleIcon icon={'dev.to'} url={contact['dev.to']} />
+    <SimpleIcon icon={'Itch.io'} url={contact['Itch.io']} />
+    <SimpleIcon icon={'LinkedIn'} url={contact.LinkedIn} />
   </div>
 </section>
