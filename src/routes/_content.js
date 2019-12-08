@@ -1,29 +1,22 @@
 import fs from 'fs';
 import path from 'path';
 import * as MarkdownIt from 'markdown-it'
+const meta = require('markdown-it-meta')
 
 export function getContent(slug) {
-    const file = `./content/${slug}.md`;
+	const file = `./content/${slug}.md`;
 	if (!fs.existsSync(file)) return null;
 
-    const md = new MarkdownIt()
-    const markdown = fs.readFileSync(file, 'utf-8');
-    const markdownRenderResult = md.render(markdown);
+	const md = new MarkdownIt()
+	md.use(meta)
 
-	// const { content, metadata } = process_markdown(markdown);
+	const markdown = fs.readFileSync(file, 'utf-8');
+	const rendered = md.render(markdown);
 
-	// const date = new Date(`${metadata.pubdate} EDT`); // cheeky hack
-	// metadata.dateString = date.toDateString();
-
-	// const html = marked(content);
-
-	// return {
-	// 	slug,
-	// 	metadata,
-	// 	html
-    // };
-
-    return markdownRenderResult
+	return {
+		meta: md.meta,
+		html: rendered
+	}
 }
 
 // function process_markdown(markdown) {
