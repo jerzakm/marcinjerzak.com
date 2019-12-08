@@ -1,5 +1,11 @@
 <script>
   import SimpleIcon from "../components/SimpleIcon.svelte";
+  import { onMount } from "svelte";
+  let loaded;
+
+  onMount(() => {
+    loaded = true;
+  });
 </script>
 
 <style lang="scss">
@@ -50,13 +56,13 @@
   <div>
     <h2 class="primary-c">software developer</h2>
     <h3>with a</h3>
-    <h1>Profound mission statement.</h1>
+    <h1 class="text-focus-in">Profound mission statement.</h1>
     <h3 class="primary-c">
       tbh, sometimes I'll start to code and I don't even know where it's going.
       I just hope I find it along the way.
     </h3>
   </div>
-  <div class="social-container">
+  <div class="social-container bounce">
     <SimpleIcon icon={'GitHub'} />
     <SimpleIcon icon={'Twitter'} />
     <SimpleIcon icon={'dev.to'} />

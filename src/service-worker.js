@@ -1,4 +1,9 @@
-import { timestamp, files, shell, routes } from '@sapper/service-worker';
+import {
+	timestamp,
+	files,
+	shell,
+	routes
+} from '@sapper/service-worker';
 
 const ASSETS = `cache${timestamp}`;
 
@@ -10,11 +15,11 @@ const cached = new Set(to_cache);
 self.addEventListener('install', event => {
 	event.waitUntil(
 		caches
-			.open(ASSETS)
-			.then(cache => cache.addAll(to_cache))
-			.then(() => {
-				self.skipWaiting();
-			})
+		.open(ASSETS)
+		.then(cache => cache.addAll(to_cache))
+		.then(() => {
+			self.skipWaiting();
+		})
 	);
 });
 
@@ -65,18 +70,18 @@ self.addEventListener('fetch', event => {
 	// might prefer a cache-first approach to a network-first one.)
 	event.respondWith(
 		caches
-			.open(`offline${timestamp}`)
-			.then(async cache => {
-				try {
-					const response = await fetch(event.request);
-					cache.put(event.request, response.clone());
-					return response;
-				} catch(err) {
-					const response = await cache.match(event.request);
-					if (response) return response;
+		.open(`offline${timestamp}`)
+		.then(async cache => {
+			try {
+				const response = await fetch(event.request);
+				cache.put(event.request, response.clone());
+				return response;
+			} catch (err) {
+				const response = await cache.match(event.request);
+				if (response) return response;
 
-					throw err;
-				}
-			})
+				throw err;
+			}
+		})
 	);
 });
