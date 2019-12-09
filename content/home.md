@@ -2,10 +2,9 @@
 quotes:
  - I am Beyoncé. Always.
  - Sometimes I'll start to code and I don't even know where it's going. I just hope I find it along the way.
- - My mind is going a mile an hour.
  - I want people to be afraid of how much they love my work.
  - Whenever I'm about to do something, I think, "Would an idiot do that?" and if they would, I do not do that thing.
- - This website requires an advanced sense of humor. I don't everybody to understand.
+ - This website requires an advanced sense of humor. I don't expect everybody to understand.
  - Live everyday, die once.
  - Early worm gets the worm and then they become friends.
  - I know exactly what to do. But in a much more real sense, I have no idea what to do.

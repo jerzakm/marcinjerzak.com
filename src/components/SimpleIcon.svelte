@@ -7,7 +7,6 @@
 
 <style>
   svg {
-    fill: white;
     width: 3em;
   }
   .simple-icon {
