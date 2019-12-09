@@ -1,12 +1,17 @@
 <script context="module">
   export async function preload({ params, query }) {
-    const res = await this.fetch(`contact.json`);
-    const data = await res.json();
-    // console.log(data)
-    if (res.status === 200) {
-      return { contact: data.meta };
+    const contactRes = await this.fetch(`contact.json`);
+    const contactData = await contactRes.json();
+    const homeRes = await this.fetch(`home.json`);
+    const homeData = await homeRes.json();
+    if (contactRes.status === 200 && homeRes.status === 200) {
+      return {
+        contact: contactData.meta,
+        home: homeData.meta
+        };
     } else {
-      this.error(res.status, data.message);
+      this.error(contactRes.status, contactData.message);
+      this.error(homeRes.status, homeData.message);
     }
   }
 </script>
@@ -14,6 +19,8 @@
 <script>
   import SimpleIcon from "../components/SimpleIcon.svelte";
   export let contact;
+  export let home;
+  const quote = home.quotes[Math.floor(Math.random()*home.quotes.length)]
 </script>
 
 <style lang="scss">
@@ -66,8 +73,7 @@
     <h3>with a</h3>
     <h1 class="text-focus-in">Profound mission statement.</h1>
     <h3 class="primary-c">
-      tbh, sometimes I'll start to code and I don't even know where it's going.
-      I just hope I find it along the way.
+      {quote}
     </h3>
   </div>
   <div class="social-container bounce">
