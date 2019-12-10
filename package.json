@@ -2,11 +2,6 @@
   "name": "marcinjerzak.com",
   "version": "1.0.0",
   "description": "",
-  "main": "rollup.config.js",
-  "scripts": {
-    "dev": "rollup -c -w",
-    "build-dev": "npx rollup -c"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jerzakm/marcinjerzak.com.git"
@@ -18,34 +13,42 @@
     "url": "https://github.com/jerzakm/marcinjerzak.com/issues"
   },
   "homepage": "https://github.com/jerzakm/marcinjerzak.com#readme",
-  "devDependencies": {
-    "@fortawesome/free-brands-svg-icons": "^5.11.2",
-    "@fortawesome/free-regular-svg-icons": "^5.11.2",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "rollup": "^1.23.1",
-    "rollup-plugin-bundle-html": "^0.2.1",
-    "rollup-plugin-commonjs": "^10.0.1",
-    "rollup-plugin-livereload": "^1.0.4",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-scss": "^1.0.2",
-    "rollup-plugin-serve": "^1.0.1",
-    "rollup-plugin-svelte": "^5.1.0",
-    "rollup-watch": "^4.3.1",
-    "sass": "^1.23.0",
-    "serve": "^11.1.0",
-    "svelte": "^3.12.1",
-    "svelte-preprocess": "^3.1.2",
-    "@pyoner/svelte-ts-preprocess": "^1.2.1",
-    "npm-run-all": "^4.1.5",
-    "rollup-plugin-terser": "^4.0.4",
-    "rollup-plugin-typescript2": "0.21.0",
-    "typescript": "^3.4.5",
-    "sirv-cli": "^0.4.4"
+  "scripts": {
+    "dev": "sapper dev",
+    "build": "sapper build",
+    "export": "sapper export",
+    "start": "node __sapper__/build",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "test": "run-p --race dev cy:run"
   },
   "dependencies": {
-    "fa-svelte": "^3.0.0",
-    "svelte-material-ui": "^1.0.0-beta.15",
-    "svelte-spa-router": "^1.2.1"
+    "compression": "^1.7.1",
+    "markdown-it": "^10.0.0",
+    "markdown-it-meta": "0.0.1",
+    "polka": "next",
+    "simple-icons": "^1.20.0",
+    "sirv": "^0.4.0",
+    "three": "^0.111.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
+    "@rollup/plugin-replace": "^2.2.0",
+    "autoprefixer": "^9.7.3",
+    "node-sass": "^4.13.0",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.12.0",
+    "rollup-plugin-babel": "^4.0.2",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5.0.1",
+    "rollup-plugin-terser": "^4.0.4",
+    "sapper": "^0.27.0",
+    "svelte": "^3.0.0",
+    "svelte-preprocess": "^3.2.6"
   }
 }

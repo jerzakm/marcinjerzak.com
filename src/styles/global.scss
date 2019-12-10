@@ -1,0 +1,38 @@
+@import "./theme.scss";
+@import "./anims.scss";
+@import "./typography.scss";
+@import "./flex.scss";
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-size: 18px;
+	line-height: 1.5;
+	color: $text-color;
+	background-color: $background-color;
+}
+
+h1 {
+	font-size: 3.3em;
+	font-weight: 700;
+}
+
+a {
+	color: inherit;
+}
+
+.primary-c {
+	color: $primary-color;
+}
+
+.primary-b {
+	background-color: $primary-color;
+}
