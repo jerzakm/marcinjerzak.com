@@ -18,7 +18,7 @@
 
 <script>
   import SimpleIcon from "../components/SimpleIcon.svelte";
-  import FeaturedWork from "../components/work/FeaturedWork.svelte";
+  import ProjectsContainer from "../components/projects/ProjectContainer.svelte";
   export let contact;
   export let home;
   const quote = home.quotes[Math.floor(Math.random() * home.quotes.length)];
@@ -48,7 +48,6 @@
 
   .projects-container {
     min-height: 100vh;
-    display: flex;
   }
 </style>
 
@@ -77,6 +76,5 @@
 </section>
 
 <section class="projects-container">
-  <FeaturedWork />
-
+  <ProjectsContainer />
 </section>
