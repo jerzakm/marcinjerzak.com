@@ -1,4 +1,5 @@
 <style lang="scss">
+  @import "../../styles/theme.scss";
   .container {
     display: flex;
     flex-direction: column;
@@ -6,20 +7,33 @@
     min-height: 99vh;
   }
   .project-name {
-    font-size: 5.5em;
-    margin: 0;
+    font-size: 4.8em;
+    margin: 0 0 -1rem 0;
+    padding: 0;
+    display: inline-block;
   }
   .project-short-desc {
     font-size: 1.1em;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
   }
+
+  .project-desc {
+    text-align: justify;
+    margin-right: 3vw;
+    font-size: 0.88em;
+  }
+
   .tag-container {
     margin: 0;
   }
-
-  .article-container-header {
-    font-size: 1.3em;
+  .tag {
+    background-color: $primary-color;
+    font-weight: 700;
+    padding: 0.3rem 0.2em;
+    margin: 0.1em 0;
   }
-
   .content-container {
     display: flex;
     flex-wrap: wrap;
@@ -44,7 +58,7 @@
     <div class="text-content">
       <h1 class="project-name">Hexed realms</h1>
       <h2 class="project-short-desc">Webapp for fantasy hex map makers</h2>
-      <p>
+      <p class="project-desc">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores odio
         nihil est sequi modi in mollitia, dolor debitis, atque voluptatem
         doloribus accusantium inventore perspiciatis nobis maiores repellat,
@@ -57,30 +71,6 @@
         <span class="tag">#typescript</span>
         <span class="tag">#pixi.js</span>
         <span class="tag">#webgl</span>
-      </div>
-      <div class="article-container">
-        <h3 class="article-container-header">Related articles</h3>
-        <div class="article-link">
-          <h4>How things were made. A quick study on how things were made.</h4>
-          <div class="article-meta">
-            <span class="article-meta-read-time">4 min read</span>
-            <span class="article-meta-date">Dec 5</span>
-          </div>
-        </div>
-        <div class="article-link">
-          <h4>How things were made. A quick study on how things were made.</h4>
-          <div class="article-meta">
-            <span class="article-meta-read-time">4 min read</span>
-            <span class="article-meta-date">Dec 5</span>
-          </div>
-        </div>
-        <div class="article-link">
-          <h4>How things were made. A quick study on how things were made.</h4>
-          <div class="article-meta">
-            <span class="article-meta-read-time">4 min read</span>
-            <span class="article-meta-date">Dec 5</span>
-          </div>
-        </div>
       </div>
       <div class="link-container">
         <span>source</span>
