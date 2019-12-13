@@ -4,11 +4,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 99vh;
+    min-height: 99vh;    
   }
   .project-name {
     font-size: 4.8em;
-    margin: 0 0 -1rem 0;
+    line-height: 0.7;
+    // margin: 0 0 -0.5rem 0;
     padding: 0;
     display: inline-block;
   }
@@ -19,14 +20,26 @@
     display: inline-block;
   }
 
-  .project-desc {
-    text-align: justify;
-    margin-right: 3vw;
-    font-size: 0.88em;
+  .content-container {
+    display: flex;  
+    flex-wrap: wrap;        
+    div{
+      margin: 3vw;
+    }
+  }
+  .text-content {
+    flex-basis: 400px;
+    flex-grow: 6;
   }
 
+  .project-desc {
+    text-align: justify;
+    // margin-right: 3vw;
+    font-size: 0.88em;
+  }
   .tag-container {
     margin: 0;
+    padding: 0;
   }
   .tag {
     background-color: $primary-color;
@@ -34,15 +47,25 @@
     padding: 0.3rem 0.2em;
     margin: 0.1em 0;
   }
-  .content-container {
+
+  .link-container {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 3rem 4rem;
+    span{
+      font-weight: 700;
+      font-size: 1.6em;
+      opacity: 40%;
+    }
   }
 
-  .text-content {
-    flex-basis: 400px;
-    flex-grow: 6;
+  .online-link {
+    
   }
+  .source-link {
+    
+  }
+
   .preview-content {
     flex-grow: 5;
     flex-basis: 400px;
@@ -56,8 +79,8 @@
 <div class="container">
   <div class="content-container">
     <div class="text-content">
-      <h1 class="project-name">Hexed realms</h1>
-      <h2 class="project-short-desc">Webapp for fantasy hex map makers</h2>
+      <h1 class="project-name">Generic app</h1>
+      <h2 class="project-short-desc">Lorem ipsum dolor sit amet.</h2>
       <p class="project-desc">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores odio
         nihil est sequi modi in mollitia, dolor debitis, atque voluptatem
@@ -73,12 +96,12 @@
         <span class="tag">#webgl</span>
       </div>
       <div class="link-container">
-        <span>source</span>
-        <span>online</span>
+        <span class="source-link">source</span>
+        <span class="online-link">online</span>
       </div>
     </div>
     <div class="preview-content">
-      <img src="test_preview.jpg" alt="preview" class="preview-img" />
+      <img src="test_preview.png" alt="preview" class="preview-img" />
     </div>
   </div>
 </div>
