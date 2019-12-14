@@ -66,7 +66,7 @@
     <h1 class="uppercase">Profound mission statement.</h1>
     <h3>{quote}</h3>
   </div>
-  <div class="social-container bounce">
+  <div class="social-container">
     <SimpleIcon icon={'GitHub'} url={contact.GitHub} />
     <SimpleIcon icon={'Twitter'} url={contact.Twitter} />
     <SimpleIcon icon={'dev.to'} url={contact['dev.to']} />

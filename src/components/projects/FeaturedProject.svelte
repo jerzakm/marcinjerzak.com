@@ -1,43 +1,55 @@
+<script>
+  import MdDesktopWindows from "svelte-icons/md/MdDesktopWindows.svelte";
+  import MdCode from "svelte-icons/md/MdCode.svelte";
+</script>
+
 <style lang="scss">
   @import "../../styles/theme.scss";
   .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 99vh;    
+    min-height: 99vh;
   }
   .project-name {
     font-size: 4.8em;
-    line-height: 0.7;
-    // margin: 0 0 -0.5rem 0;
+    line-height: 0.95;
+    text-align: left;
     padding: 0;
     display: inline-block;
+    width: 100%;
+    // background: $primary-color;
+    // background: radial-gradient(
+    //   circle,
+    //   $primary-color 48%,
+    //   $secondary-color 100%
+    // );
+    // background-clip: text;
+    // -webkit-text-fill-color: transparent;
   }
   .project-short-desc {
     font-size: 1.1em;
-    margin: 0;
+    margin: 1rem 0 0 0;
     padding: 0;
     display: inline-block;
   }
 
   .content-container {
-    display: flex;  
-    flex-wrap: wrap;        
-    div{
-      margin: 3vw;
-    }
+    display: flex;
+    flex-wrap: wrap;
   }
   .text-content {
     flex-basis: 400px;
     flex-grow: 6;
+    margin: 0 5vw;
   }
 
   .project-desc {
     text-align: justify;
     // margin-right: 3vw;
-    font-size: 0.88em;
+    font-size: 0.87em;
   }
-  .tag-container {
+  .tags {
     margin: 0;
     padding: 0;
   }
@@ -51,19 +63,33 @@
   .link-container {
     display: flex;
     justify-content: space-around;
-    padding: 3rem 4rem;
-    span{
-      font-weight: 700;
-      font-size: 1.6em;
-      opacity: 40%;
-    }
+    margin: 1rem 5vw;
+    // padding: 3rem 4rem;
+  }
+
+  .link {
+    font-weight: 700;
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .link-text {
+    color: $text-color;
+  }
+
+  .link-icon {
+    display: flex;
+    margin: 5px;
   }
 
   .online-link {
-    
+    max-width: 1.6em;
   }
+
   .source-link {
-    
+    max-width: 2em;
   }
 
   .preview-content {
@@ -90,14 +116,24 @@
         consectetur, doloremque consequatur tenetur inventore harum quasi
         reprehenderit earum ea veniam ex neque quae qui. Aliquid?
       </p>
-      <div class="tag-container">
+      <div class="tags">
         <span class="tag">#typescript</span>
         <span class="tag">#pixi.js</span>
         <span class="tag">#webgl</span>
       </div>
       <div class="link-container">
-        <span class="source-link">source</span>
-        <span class="online-link">online</span>
+        <span class="link">
+          <span class="link-icon source-link">
+            <MdCode />
+          </span>
+          <span class="link-text ">source</span>
+        </span>
+        <span class="link">
+          <span class="link-icon online-link">
+            <MdDesktopWindows />
+          </span>
+          <span class="link-text">online</span>
+        </span>
       </div>
     </div>
     <div class="preview-content">
