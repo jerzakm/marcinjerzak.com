@@ -15,7 +15,7 @@
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
     const geometry = new THREE.BoxGeometry(3, 3, 3);
-    const material = new THREE.MeshBasicMaterial({ color: 0x222222 });
+    const material = new THREE.MeshBasicMaterial({ color: 0x777777 });
     material.wireframe = true;
     const cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
@@ -24,7 +24,7 @@
     cube.rotation.y = 5;
     renderer.render(scene, camera);
     const animate = function() {
-      cube.rotation.x += 0.01;
+      cube.rotation.x += 0.0071;
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     };

@@ -59,8 +59,7 @@
 
 <section class="home-container flex-full-center">
   <div>
-    <h3>Hi!</h3>
-    <h3>My name is Marcin Jerzak. I'm a</h3>
+    <h3>MARCIN JERZAK</h3>
     <h2>software developer</h2>
     <h3>with a</h3>
     <h1 class="uppercase">Profound mission statement.</h1>
@@ -75,6 +74,6 @@
   </div>
 </section>
 
-<section class="projects-container">
+<!-- <section class="projects-container">
   <ProjectsContainer />
-</section>
+</section> -->

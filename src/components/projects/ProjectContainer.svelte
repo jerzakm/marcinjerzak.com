@@ -37,7 +37,6 @@
   .projects {
     flex-basis: 500px;
     flex-grow: 4;
-    // padding: 0 2em;
   }
   .filler {
     flex-grow: 1;
@@ -55,9 +54,21 @@
     </div>
   </div>
   <div class="projects">
-    <FeaturedProject />
-    <FeaturedProject />
-    <FeaturedProject />
+    <div class="project">
+      <FeaturedProject />
+    </div>
+    <div class="project">
+      <FeaturedProject />
+    </div>
+    <div class="project">
+      <FeaturedProject />
+    </div>
+    <div class="project">
+      <FeaturedProject />
+    </div>
+    <div class="project">
+      <FeaturedProject />
+    </div>
   </div>
   <div class="filler" />
   <div />
