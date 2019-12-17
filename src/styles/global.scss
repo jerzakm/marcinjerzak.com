@@ -18,6 +18,11 @@ body {
 	line-height: 1.5;
 	color: $text-color;
 	background-color: $background-color;
+	text-shadow: 0 0 7px #FFFFFF;
+
+	@media screen and (min-width: 1600px) {
+		font-size: 24px;
+	}
 }
 
 h1 {
@@ -35,4 +40,12 @@ a {
 
 .primary-b {
 	background-color: $primary-color;
+}
+
+#twgl-canvas {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	z-index: -1;
 }

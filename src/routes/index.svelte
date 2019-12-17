@@ -18,7 +18,7 @@
 
 <script>
   import SimpleIcon from "../components/SimpleIcon.svelte";
-  import FeaturedWork from "../components/work/FeaturedWork.svelte";
+  import ProjectsContainer from "../components/projects/ProjectContainer.svelte";
   export let contact;
   export let home;
   const quote = home.quotes[Math.floor(Math.random() * home.quotes.length)];
@@ -48,7 +48,6 @@
 
   .projects-container {
     min-height: 100vh;
-    display: flex;
   }
 </style>
 
@@ -60,14 +59,13 @@
 
 <section class="home-container flex-full-center">
   <div>
-    <h3>Hi!</h3>
-    <h3>My name is Marcin Jerzak. I'm a</h3>
+    <h3>MARCIN JERZAK</h3>
     <h2>software developer</h2>
     <h3>with a</h3>
     <h1 class="uppercase">Profound mission statement.</h1>
     <h3>{quote}</h3>
   </div>
-  <div class="social-container bounce">
+  <div class="social-container">
     <SimpleIcon icon={'GitHub'} url={contact.GitHub} />
     <SimpleIcon icon={'Twitter'} url={contact.Twitter} />
     <SimpleIcon icon={'dev.to'} url={contact['dev.to']} />
@@ -76,7 +74,6 @@
   </div>
 </section>
 
-<section class="projects-container">
-  <FeaturedWork />
-
-</section>
+<!-- <section class="projects-container">
+  <ProjectsContainer />
+</section> -->
