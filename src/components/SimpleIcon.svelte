@@ -8,7 +8,7 @@
 <style>
   svg {
     width: 3em;
-    transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   .simple-icon {
     margin: 0 0.5rem;
@@ -16,8 +16,8 @@
   svg:hover {
     transform: scale(1.8, 1.8);
     z-index: 10;
-    fill: url(#my-cool-gradient) #44996e;
-    margin: 0 0.5rem;
+    /* fill: url(#my-cool-gradient) #44996e; */
+    margin: 0 1rem;
   }
 </style>
 
