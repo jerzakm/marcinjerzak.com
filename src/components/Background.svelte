@@ -67,7 +67,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     //vec3 paint = vec3(.7,.5,.4);
     vec3 paint = vec3(.99,.9,.7);
 
-    for(float z=0.; z<1.; z+= 1./30.) {
+    for(float z=0.; z<1.; z+= 1./10.) {
         paint = .5+.5*cos(4.*2.*PI*z+vec3(0.,2.*PI/3.,-2.*PI/3.));
         uv *= m;
         vec2 duv = vec2(.8,.5)*sfbm2(vec3(1.2*uv,3.*z+iTime)) - 3.*z*mouse;

@@ -1,7 +1,7 @@
 <script>
   // import Nav from "../components/Nav.svelte";
-  import Background from "../components/Background.svelte";
-  // import BackgroundGl from "../components/BackgroundGl.svelte";
+  // import Background from "../components/Background.svelte";
+  import BackgroundGl from "../components/BackgroundGl.svelte";
 
   // export let segment;
 </script>
@@ -20,8 +20,8 @@
 </style>
 
 <!-- <Nav {segment} /> -->
-<Background />
-<!-- <BackgroundGl /> -->
+<!-- <Background /> -->
+<BackgroundGl />
 <main>
   <slot />
 </main>
