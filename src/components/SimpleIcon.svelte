@@ -2,6 +2,7 @@
   import * as simpleIcons from "simple-icons";
   export let icon;
   export let url;
+  export let color = "white";
   const iconPath = simpleIcons.default[`${icon}`].path;
 </script>
 
@@ -23,11 +24,11 @@
 
 <a href="{url} " class="simple-icon">
   <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d={iconPath} />
+    <path d={iconPath} fill={color} />
   </svg>
 </a>
 
-<svg
+<!-- <svg
   style="width:0;height:0;position:absolute;"
   aria-hidden="true"
   focusable="false">
@@ -35,4 +36,4 @@
     <stop offset="0%" stop-color="#FF00FF" />
     <stop offset="100%" stop-color="#4FFFBD" />
   </linearGradient>
-</svg>
+</svg> -->

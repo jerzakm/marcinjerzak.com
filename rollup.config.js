@@ -86,7 +86,7 @@ export default {
 				preprocess
 			}),
 			resolve({
-				dedupe
+				// dedupe
 			}),
 			commonjs()
 		],

@@ -29,8 +29,8 @@
 
   .home-container {
     min-height: 99vh;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 35% 65%;
   }
 
   .initials-logo {
@@ -49,6 +49,10 @@
   .projects-container {
     min-height: 100vh;
   }
+
+  .home-container-main {
+    display: flex;
+  }
 </style>
 
 <svelte:head>
@@ -57,23 +61,27 @@
 
 <span class="initials-logo">MJ</span>
 
-<section class="home-container flex-full-center">
-  <div>
-    <h3>MARCIN JERZAK</h3>
-    <h2>software developer</h2>
-    <h3>with a</h3>
-    <h1 class="uppercase">Profound mission statement.</h1>
-    <h3>{quote}</h3>
-  </div>
-  <div class="social-container">
-    <SimpleIcon icon={'GitHub'} url={contact.GitHub} />
-    <SimpleIcon icon={'Twitter'} url={contact.Twitter} />
-    <SimpleIcon icon={'dev.to'} url={contact['dev.to']} />
-    <SimpleIcon icon={'Itch.io'} url={contact['Itch.io']} />
-    <SimpleIcon icon={'LinkedIn'} url={contact.LinkedIn} />
+<section class="home-container">
+  <div />
+  <div class="home-container-main flex-full-center">
+    <div>
+      <h3>MARCIN JERZAK</h3>
+      <h1>software developer</h1>
+      <h3>
+        web & cloud solutions * desktop applications * business intelligence
+      </h3>
+      <!-- <h3>{quote}</h3> -->
+    </div>
+    <div class="social-container">
+      <SimpleIcon icon={'GitHub'} url={contact.GitHub} />
+      <SimpleIcon icon={'Twitter'} url={contact.Twitter} />
+      <SimpleIcon icon={'dev.to'} url={contact['dev.to']} />
+      <SimpleIcon icon={'Itch.io'} url={contact['Itch.io']} />
+      <SimpleIcon icon={'LinkedIn'} url={contact.LinkedIn} />
+    </div>
   </div>
 </section>
 
-<!-- <section class="projects-container">
+<section class="projects-container">
   <ProjectsContainer />
-</section> -->
+</section>

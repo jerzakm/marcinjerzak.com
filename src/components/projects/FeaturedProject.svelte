@@ -18,14 +18,6 @@
     padding: 0;
     display: inline-block;
     width: 100%;
-    // background: $primary-color;
-    // background: radial-gradient(
-    //   circle,
-    //   $primary-color 48%,
-    //   $secondary-color 100%
-    // );
-    // background-clip: text;
-    // -webkit-text-fill-color: transparent;
   }
   .project-short-desc {
     font-size: 1.1em;
@@ -54,10 +46,11 @@
     padding: 0;
   }
   .tag {
-    background-color: $primary-color;
+    background-color: #000;
     font-weight: 700;
     padding: 0.3rem 0.2em;
     margin: 0.1em 0;
+    text-shadow: none;
   }
 
   .link-container {

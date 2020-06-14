@@ -16,20 +16,12 @@
     z-index: 2;
     font-size: $headerTextSize;
     font-weight: 700;
-  }
-
-  .header-squiggle {
-    fill: none;
-    stroke: $primary-color;
-    stroke-width: 20;
-    max-width: $headerTextSize * 3;
-    position: absolute;
-    z-index: 1;
+    color: rgba($color: #000000, $alpha: 0);
+    text-shadow: none;
+    -webkit-text-stroke: 2px white;
   }
 
   .container {
-    // display: grid;
-    // grid-template-columns: $headerTextSize * 3 1fr $headerTextSize * 3;
     display: flex;
     flex-wrap: wrap;
   }
@@ -47,10 +39,10 @@
   <div>
     <div class="header-container flex-full-center">
       <span class="header-text">work</span>
-      <svg viewBox="0 0 216 52" class="header-squiggle">
+      <!-- <svg viewBox="0 0 216 52" class="header-squiggle">
         <path
           d="M5.5,40c7.1-4.1,50.4-38,113.4-5c34.7,18.2,79.5-18.2,91.3-24.9" />
-      </svg>
+      </svg> -->
     </div>
   </div>
   <div class="projects">
