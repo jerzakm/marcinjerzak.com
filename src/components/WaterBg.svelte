@@ -212,9 +212,7 @@
 
   onMount(() => {
     setup();
-  });
-
-  function setup() {
+    function setup() {
     // Texture width for simulation
     var WIDTH = 256;
 
@@ -317,7 +315,6 @@
         WIDTH - 1
       );
 
-      const box = new THREE.BoxGeometry(50, 50, 50);
 
       // material: make a THREE.ShaderMaterial clone of THREE.MeshPhongMaterial, with customized vertex shader
       var material = new THREE.ShaderMaterial({
@@ -567,4 +564,11 @@
       renderer.render(scene, camera);
     }
   }
+  });
+  import * as THREE from 'three';
+
+  import { GPUComputationRenderer } from 'three/examples/jsm/misc/GPUComputationRenderer.js';
+  import { SimplexNoise } from 'three/examples/jsm/math/SimplexNoise.js';
+
+
 </script>
