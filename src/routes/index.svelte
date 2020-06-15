@@ -2,17 +2,16 @@
   @import "../styles/theme.scss";
 
   .home-container {
+    opacity: 0.92;
     min-height: 99vh;
     display: grid;
-    grid-template-columns: 35% 65%;
-    animation: text-focus-in 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-  }
+    grid-template-columns: 0% 100%;
+    animation: text-focus-in 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 
-  .initials-logo {
-    position: absolute;
-    padding: 1.5rem 2.2rem;
-    font-size: 2em;
-    font-weight: 700;
+    @media screen and (min-width: 1000px) {
+      // margin-top: -2.5rem;
+      grid-template-columns: 35% 65%;
+    }
   }
 
   .social-container {
@@ -23,27 +22,52 @@
 
   .projects-container {
     min-height: 100vh;
+    opacity: 0.92;
   }
 
   .home-container-main {
     display: flex;
   }
 
-  .home-image-container{
-    display: block;
+  .home-image-container {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .home-image{
-    width: 55vw;
+  .home-image-container {
     position: absolute;
-    top: 2vh;
-    left: 3vw;
-    opacity: 0.5;
+    display: flex;
+    overflow: hidden;
+    width: 99vw;
+    height: 100vh;
   }
 
+  .home-image {
+    align-self: baseline;
 
+    // object-fit: cover;
+    // position: absolute;
+    // top: 2vh;
+    // left: 2vw;
+    // filter: invert(1);
+    // max-width: 100vw;
+    max-height: 90vh;
+    margin-left: -3rem;
+    opacity: 0.4;
+    @media screen and (min-width: 1200px) {
+      // margin-top: -2.5rem;
+      max-width: 60vw;
+      max-height: 85vh;
+      opacity: 1;
+      margin-left: 1rem;
+    }
+
+    @media screen and (min-width: 1600px) {
+      max-width: 70vw;
+      max-height: 85vh;
+      margin-left: 2rem;
+    }
+  }
 </style>
 
 <script context="module">
@@ -76,14 +100,12 @@
   <title>Portfolio</title>
 </svelte:head>
 
-<span class="initials-logo">MJ</span>
-
-<img src="home_illustration2.png" alt="preview" class="home-image" />
+<div class="home-image-container">
+  <img src="home_abstract.png" alt="preview" class="home-image" />
+</div>
 
 <section class="home-container">
-  <div class='home-image-container'>
-
-  </div>
+  <div></div>
   <div class="home-container-main flex-full-center">
     <div>
       <h3>MARCIN JERZAK</h3>
@@ -94,11 +116,31 @@
       <!-- <h3>{quote}</h3> -->
     </div>
     <div class="social-container">
-      <SimpleIcon icon="{'GitHub'}" url="{contact.GitHub}" />
-      <SimpleIcon icon="{'Twitter'}" url="{contact.Twitter}" />
-      <SimpleIcon icon="{'dev.to'}" url="{contact['dev.to']}" />
-      <SimpleIcon icon="{'Itch.io'}" url="{contact['Itch.io']}" />
-      <SimpleIcon icon="{'LinkedIn'}" url="{contact.LinkedIn}" />
+      <SimpleIcon
+        icon="{'GitHub'}"
+        url="{contact.GitHub}"
+        color="{`#121212`}"
+      />
+      <SimpleIcon
+        icon="{'Twitter'}"
+        url="{contact.Twitter}"
+        color="{`#121212`}"
+      />
+      <SimpleIcon
+        icon="{'dev.to'}"
+        url="{contact['dev.to']}"
+        color="{`#121212`}"
+      />
+      <SimpleIcon
+        icon="{'Itch.io'}"
+        url="{contact['Itch.io']}"
+        color="{`#121212`}"
+      />
+      <SimpleIcon
+        icon="{'LinkedIn'}"
+        url="{contact.LinkedIn}"
+        color="{`#121212`}"
+      />
     </div>
   </div>
 </section>

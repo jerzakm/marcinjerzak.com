@@ -18,7 +18,7 @@
     font-weight: 700;
     color: rgba($color: #000000, $alpha: 0);
     text-shadow: none;
-    -webkit-text-stroke: 2px white;
+    -webkit-text-stroke: 2px #121212;
   }
 
   .container {

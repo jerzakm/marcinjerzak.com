@@ -46,7 +46,8 @@
     padding: 0;
   }
   .tag {
-    background-color: #000;
+    background-color: $text-color;
+    color: $background-color;
     font-weight: 700;
     padding: 0.3rem 0.2em;
     margin: 0.1em 0;

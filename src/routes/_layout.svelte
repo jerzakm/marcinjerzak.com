@@ -1,10 +1,3 @@
-<script>
-  import WaterBg from "./../components/WaterBg.svelte";
-  // import Nav from "../components/Nav.svelte";
-
-  // export let segment;
-</script>
-
 <style lang="scss" global>
   @import "../styles/global.scss";
 
@@ -15,7 +8,15 @@
   }
 </style>
 
-<!-- <Nav {segment} /> -->
+<script>
+  import WaterBg from "./../components/WaterBg.svelte";
+  import Nav from "../components/Nav.svelte";
+
+  export let segment;
+  `${segment}`;
+</script>
+
+<Nav segment="segment" />
 <WaterBg />
 <main>
   <slot />

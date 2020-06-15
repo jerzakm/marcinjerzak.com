@@ -264,7 +264,7 @@
 
       scene = new THREE.Scene();
 
-      let sun = new THREE.PointLight(0x444444, 0.8);
+      let sun = new THREE.PointLight(0xeeeeee, 0.95);
       sun.position.set(210, 1400, -280);
       scene.add(sun);
 
@@ -306,7 +306,7 @@
     }
 
     function initWater() {
-      var materialColor = 0x121212;
+      var materialColor = 0xffffff;
 
       var geometry = new THREE.PlaneBufferGeometry(
         BOUNDS,
@@ -333,8 +333,8 @@
       // Material attributes from THREE.MeshPhongMaterial
 
       material.color = new THREE.Color(materialColor);
-      material.specular = new THREE.Color(0x444444);
-      material.shininess = 70;
+      material.specular = new THREE.Color(0x151515);
+      material.shininess = 50;
 
       // Sets the uniforms with the material values
       material.uniforms["diffuse"].value = material.color;

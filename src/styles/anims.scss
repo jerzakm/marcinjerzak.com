@@ -132,3 +132,13 @@
     opacity: 1;
   }
 }
+
+.moon-toggle {
+  transform: translateY(-3.2em);
+  opacity: 1 !important;
+}
+
+.sun-toggle {
+  transform: translateY(3.2em);
+  opacity: 0 !important;
+}

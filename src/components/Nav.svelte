@@ -1,12 +1,14 @@
-<script>
-  export let segment;
-</script>
-
 <style lang="scss">
   @import "../styles/theme.scss";
   nav {
     font-weight: 300;
     padding: 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
   }
 
   ul {
@@ -45,24 +47,47 @@
     padding: 1em 0.5em;
     display: block;
   }
+
+  .initials-logo {
+    // position: absolute;
+    padding: 1.5rem 2.2rem;
+    font-size: 2em;
+    font-weight: 700;
+  }
 </style>
 
-<nav>
-  <ul>
-    <li>
-      <a class:selected={segment === undefined} href=".">home</a>
-    </li>
-    <li>
-      <a class:selected={segment === 'about'} href="about">about</a>
-    </li>
-    <li>
-      <a class:selected={segment === 'projects'} href="projects">projects</a>
-    </li>
+<script>
+  export let segment;
+</script>
 
-    <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
+<nav>
+  <span class="initials-logo">MJ</span>
+  <div>
+    <ul>
+      <li>
+        <a class:selected="{segment === undefined}" href=".">home</a>
+      </li>
+      <li>
+        <a class:selected="{segment === 'projects'}" href="projects">work</a>
+      </li>
+
+      <li>
+        <a class:selected="{segment === 'services'}" href="services">
+          services
+        </a>
+      </li>
+
+      <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
 		     the blog data when we hover over the link or tap it on a touchscreen -->
-    <li>
-      <a rel="prefetch" class:selected={segment === 'blog'} href="blog">blog</a>
-    </li>
-  </ul>
+      <li>
+        <a rel="prefetch" class:selected="{segment === 'blog'}" href="blog">
+          blog
+        </a>
+      </li>
+
+      <li>
+        <a class:selected="{segment === 'contact'}" href="contact">contact</a>
+      </li>
+    </ul>
+  </div>
 </nav>
