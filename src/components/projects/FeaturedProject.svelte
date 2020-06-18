@@ -1,8 +1,3 @@
-<script>
-  import MdDesktopWindows from "svelte-icons/md/MdDesktopWindows.svelte";
-  import MdCode from "svelte-icons/md/MdCode.svelte";
-</script>
-
 <style lang="scss">
   @import "../../styles/theme.scss";
   .container {
@@ -12,12 +7,15 @@
     min-height: 99vh;
   }
   .project-name {
-    font-size: 4.8em;
+    font-size: 3.5em;
     line-height: 0.95;
     text-align: left;
     padding: 0;
     display: inline-block;
     width: 100%;
+    @media screen and (min-width: 1200px) {
+      font-size: 4.8em;
+    }
   }
   .project-short-desc {
     font-size: 1.1em;
@@ -95,6 +93,11 @@
     max-height: 100%;
   }
 </style>
+
+<script>
+  import MdDesktopWindows from "svelte-icons/md/MdDesktopWindows.svelte";
+  import MdCode from "svelte-icons/md/MdCode.svelte";
+</script>
 
 <div class="container">
   <div class="content-container">

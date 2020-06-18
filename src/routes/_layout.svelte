@@ -9,7 +9,7 @@
 </style>
 
 <script>
-  import WaterBg from "./../components/WaterBg.svelte";
+  // import WaterBg from "./../components/WaterBg.svelte";
   import Nav from "../components/Nav.svelte";
 
   export let segment;
@@ -17,7 +17,7 @@
 </script>
 
 <Nav segment="segment" />
-<WaterBg />
+<!-- <WaterBg /> -->
 <main>
   <slot />
 </main>
