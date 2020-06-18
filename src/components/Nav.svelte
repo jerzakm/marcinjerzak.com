@@ -1,19 +1,31 @@
 <style lang="scss">
   @import "../styles/theme.scss";
   nav {
-    font-weight: 300;
-    padding: 0 1em;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    bottom: 0;
     z-index: 2;
+    background-color: $text-color;
+    opacity: 0.65;
+    width: 100%;
+    transition: 0.3s;
+    @media screen and (min-width: 1000px) {
+      font-weight: 300;
+      opacity: 1;
+      padding: 0 1em;
+      bottom: unset;
+      position: absolute;
+      background-color: unset;
+    }
   }
 
   ul {
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   ul::after {
@@ -44,13 +56,28 @@
 
   a {
     text-decoration: none;
-    padding: 1em 0.5em;
+    padding: 0.2em 0.5em;
     display: block;
+    color: $background-color;
+    font-size: 1.3em;
+    opacity: 1 !important;
+    transition: 0.3s;
+    @media screen and (min-width: 1000px) {
+      color: $text-color;
+      font-size: 1.05em;
+    }
   }
 
   .initials-logo {
-    // position: absolute;
-    padding: 1.5rem 2.2rem;
+    transition: 0.3s;
+    @media screen and (min-width: 1000px) {
+      visibility: visible;
+      max-width: unset;
+      padding: 1.5rem 2.2rem;
+    }
+    max-width: 0px;
+    visibility: hidden;
+
     font-size: 2em;
     font-weight: 700;
   }

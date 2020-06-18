@@ -30,15 +30,10 @@
   }
 
   .home-image-container {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .home-image-container {
     position: absolute;
     display: flex;
     overflow: hidden;
-    width: 99vw;
+    max-width: 95vw;
     height: 100vh;
   }
 
@@ -53,12 +48,12 @@
     // max-width: 100vw;
     max-height: 90vh;
     margin-left: -3rem;
-    opacity: 0.4;
+    opacity: 0.3;
     @media screen and (min-width: 1200px) {
       // margin-top: -2.5rem;
       max-width: 60vw;
       max-height: 85vh;
-      opacity: 1;
+      opacity: 0.93;
       margin-left: 1rem;
     }
 
