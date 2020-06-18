@@ -26,17 +26,19 @@
     padding: 0;
     overflow: hidden;
     white-space: nowrap;
+    display: flex;
   }
 
-  ul::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
+  // ul::after {
+  //   content: "";
+  //   display: block;
+  //   clear: both;
+  // }
 
   li {
     display: block;
     float: left;
+    white-space: nowrap;
   }
 
   .selected {
@@ -59,12 +61,15 @@
     padding: 0.2em 0.5em;
     display: block;
     color: $background-color;
-    font-size: 1.3em;
+    font-size: 1.2em;
     opacity: 1 !important;
     transition: 0.3s;
+    @media screen and (min-width: 600px) {
+      font-size: 1.4em;
+    }
     @media screen and (min-width: 1000px) {
       color: $text-color;
-      font-size: 1.05em;
+      font-size: 1.1em;
     }
   }
 
