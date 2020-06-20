@@ -69,16 +69,27 @@
   export async function preload({ params, query }) {
     const contactRes = await this.fetch(`contact.json`);
     const contactData = await contactRes.json();
+
     const homeRes = await this.fetch(`home.json`);
     const homeData = await homeRes.json();
-    if (contactRes.status === 200 && homeRes.status === 200) {
+
+    const workRes = await this.fetch("work.json");
+    const workData = await workRes.json();
+
+    if (
+      contactRes.status === 200 &&
+      homeRes.status === 200 &&
+      workRes.status === 200
+    ) {
       return {
         contact: contactData.meta,
         home: homeData.meta,
+        work: workData
       };
     } else {
       this.error(contactRes.status, contactData.message);
       this.error(homeRes.status, homeData.message);
+      this.error(workData.status, workData.message);
     }
   }
 </script>
@@ -87,8 +98,7 @@
   import SimpleIcon from "../components/SimpleIcon.svelte";
   import ProjectsContainer from "../components/projects/ProjectContainer.svelte";
   export let contact;
-  export let home;
-  const quote = home.quotes[Math.floor(Math.random() * home.quotes.length)];
+  export let work;
 </script>
 
 <svelte:head>
@@ -141,5 +151,5 @@
 </section>
 
 <section class="projects-container">
-  <ProjectsContainer />
+  <ProjectsContainer projects="{work}" />
 </section>

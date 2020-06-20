@@ -1,7 +1,3 @@
-<script>
-  import FeaturedProject from "./FeaturedProject.svelte";
-</script>
-
 <style lang="scss">
   @import "../../styles/theme.scss";
   $headerTextSize: 5em;
@@ -35,33 +31,26 @@
   }
 </style>
 
+<script>
+  import FeaturedProject from "./FeaturedProject.svelte";
+
+  export let projects;
+  console.log(projects);
+</script>
+
 <div class="container">
   <div>
     <div class="header-container flex-full-center">
       <span class="header-text">work</span>
-      <!-- <svg viewBox="0 0 216 52" class="header-squiggle">
-        <path
-          d="M5.5,40c7.1-4.1,50.4-38,113.4-5c34.7,18.2,79.5-18.2,91.3-24.9" />
-      </svg> -->
     </div>
   </div>
   <div class="projects">
-    <div class="project">
-      <FeaturedProject />
-    </div>
-    <div class="project">
-      <FeaturedProject />
-    </div>
-    <div class="project">
-      <FeaturedProject />
-    </div>
-    <div class="project">
-      <FeaturedProject />
-    </div>
-    <div class="project">
-      <FeaturedProject />
-    </div>
+    {#each projects as project}
+      <div class="project">
+        <FeaturedProject {project} />
+      </div>
+    {/each}
   </div>
-  <div class="filler" />
-  <div />
+  <div class="filler"></div>
+  <div></div>
 </div>

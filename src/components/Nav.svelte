@@ -58,12 +58,18 @@
 
   a {
     text-decoration: none;
-    padding: 0.2em 0.5em;
+    padding: 0.2em 0.15em;
     display: block;
     color: $background-color;
-    font-size: 1.2em;
+    font-size: 1.05em;
     opacity: 1 !important;
     transition: 0.3s;
+    @media screen and (min-width: 350px) {
+      font-size: 1.2em;
+    }
+    @media screen and (min-width: 450px) {
+      padding: 0.2em 0.5em;
+    }
     @media screen and (min-width: 600px) {
       font-size: 1.4em;
     }

@@ -14,7 +14,7 @@
 </script>
 
 <script>
-  export let content;
+
 </script>
 
 <svelte:head>
