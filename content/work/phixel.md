@@ -6,4 +6,4 @@ short: Turn any image into pixelart
 tags: [webgl, svelte, shaders]
 ---
 
-Uses pure WebGL without use of any cumbersome libraries to pass user image through configurable fragment shaders. All wrapped in Svelte UI and state management. Load your image and use a combination of filters until you get the awesome outcome you desire.
+Real-time image manipulation tool powered by pure WebGL without any cumbersome helper libraries to pass user image through configurable fragment shaders. All wrapped in Svelte UI and state management. Load your image and use a combination of filters until you get the awesome outcome you desire.
