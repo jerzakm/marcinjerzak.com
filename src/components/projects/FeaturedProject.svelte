@@ -26,14 +26,17 @@
   .content-container {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 4vw;
   }
   .text-content {
     flex-basis: 400px;
     flex-grow: 6;
-    margin: 0 5vw;
     p {
       text-align: justify;
       font-size: 0.87em;
+    }
+    @media screen and (min-width: 1200px) {
+      margin: 0 4vw 0 0;
     }
   }
 
@@ -74,11 +77,15 @@
   }
 
   .preview-content {
-    flex-grow: 5;
+    flex-grow: 8;
     flex-basis: 400px;
+    overflow: hidden;
+    @media screen and (min-width: 1450px) {
+      overflow: unset;
+    }
   }
   .preview-img {
-    max-width: 100%;
+    max-width: 120%;
     max-height: 100%;
   }
 </style>

@@ -4,7 +4,7 @@
   .header-container {
     display: flex;
     flex-direction: column;
-    max-width: $headerTextSize * 3;
+    max-width: $headerTextSize * 2.9;
     margin: 0 $headerTextSize * 0.4;
   }
 
@@ -23,8 +23,8 @@
   }
 
   .projects {
-    flex-basis: 500px;
-    flex-grow: 4;
+    flex-basis: 600px;
+    flex-grow: 6;
   }
   .filler {
     flex-grow: 1;
