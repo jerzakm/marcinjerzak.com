@@ -9,6 +9,7 @@ import {
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import sveltePreprocess from 'svelte-preprocess';
+import copy from 'rollup-plugin-copy';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -31,6 +32,13 @@ export default {
 		input: config.client.input(),
 		output: config.client.output(),
 		plugins: [
+			copy({
+				targets: [{
+					src: ['content/work/**/*.jpg', 'content/work/**/*.png', 'content/work/**/*.webm'],
+					dest: 'static/work_preview'
+				}]
+			}),
+
 			replace({
 				'process.browser': true,
 				'process.env.NODE_ENV': JSON.stringify(mode)

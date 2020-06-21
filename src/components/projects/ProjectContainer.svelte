@@ -35,7 +35,6 @@
   import FeaturedProject from "./FeaturedProject.svelte";
 
   export let projects;
-  console.log(projects);
 </script>
 
 <div class="container">

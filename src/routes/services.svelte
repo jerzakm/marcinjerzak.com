@@ -4,7 +4,6 @@
     // this file is called [slug].html
     const res = await this.fetch(`services.json`);
     const data = await res.json();
-    // console.log(data)
     if (res.status === 200) {
       return { content: data };
     } else {

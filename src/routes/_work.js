@@ -12,9 +12,8 @@ export function getWork() {
   const workList = []
 
   const files = fs.readdirSync(directoryPath)
-
   for (const file of files) {
-    const markdown = fs.readFileSync(`${directoryPath}/${file}`, 'utf-8');
+    const markdown = fs.readFileSync(`${directoryPath}/${file}/content.md`, 'utf-8');
     const rendered = md.render(markdown);
     const workEntry = md.meta
     workEntry.content = rendered
