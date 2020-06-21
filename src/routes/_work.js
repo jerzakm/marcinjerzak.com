@@ -3,6 +3,8 @@ import path from 'path';
 import * as MarkdownIt from 'markdown-it'
 const meta = require('markdown-it-meta')
 
+const PREVIEW_EXTENSIONS = ['.jpg', '.png', '.webm']
+
 export function getWork() {
   const directoryPath = './content/work';
 
@@ -17,7 +19,14 @@ export function getWork() {
     const rendered = md.render(markdown);
     const workEntry = md.meta
     workEntry.content = rendered
+    workEntry.preview = []
 
+    const previewFiles = fs.readdirSync(`${directoryPath}/${file}`)
+    for (const previewFile of previewFiles) {
+      if (PREVIEW_EXTENSIONS.includes(path.extname(previewFile))) {
+        workEntry.preview.push(`work_preview/${previewFile}`)
+      }
+    }
     workList.push(workEntry)
   }
 

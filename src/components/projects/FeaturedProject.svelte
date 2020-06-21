@@ -88,6 +88,8 @@
   import MdCode from "svelte-icons/md/MdCode.svelte";
 
   export let project;
+
+  console.log(project);
 </script>
 
 <div class="container">
@@ -123,7 +125,9 @@
       </div>
     </div>
     <div class="preview-content">
-      <img src="test_preview.png" alt="preview" class="preview-img" />
+      {#if project.preview && project.preview.length > 0}
+        <img src="{project.preview[0]}" alt="preview" class="preview-img" />
+      {/if}
     </div>
   </div>
 </div>
