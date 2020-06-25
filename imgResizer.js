@@ -39,7 +39,7 @@ const resizeImage = (file, dir, output) => {
 
 // generic images
 for (const img of imgFiles) {
-  // resizeImage(img, imgDir, `./static/images`);
+  resizeImage(img, imgDir, `./static/images`);
 }
 
 // project previews
