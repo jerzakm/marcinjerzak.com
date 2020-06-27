@@ -28,7 +28,7 @@
   const iconPath = simpleIcons.default[`${icon}`].path;
 </script>
 
-<a href="{url} " class="simple-icon">
+<a href="{url} " class="simple-icon" aria-label="Link to my {icon}">
   <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="{iconPath}" fill="{color}"></path>
   </svg>

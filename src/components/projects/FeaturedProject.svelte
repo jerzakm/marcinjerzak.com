@@ -113,7 +113,12 @@
       </div>
       <div class="link-container">
         {#if project.source}
-          <a class="link" href="{project.source}" target="_blank">
+          <a
+            class="link"
+            href="{project.source}"
+            rel="noreferrer"
+            target="_blank"
+          >
             <span class="link-icon source-link">
               <MdCode />
             </span>
@@ -121,7 +126,12 @@
           </a>
         {/if}
         {#if project.live}
-          <a class="link" href="{project.live}" target="_blank">
+          <a
+            class="link"
+            href="{project.live}"
+            rel="noreferrer"
+            target="_blank"
+          >
             <span class="link-icon online-link">
               <MdDesktopWindows />
             </span>
