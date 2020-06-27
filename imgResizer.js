@@ -21,19 +21,19 @@ const resizeImage = (file, dir, output) => {
 
 
 
-  for (const resWidth of resList) {
-    if (resWidth < imgWidtgh) {
-      images[baseName].push(resWidth)
-      sharp(completePath)
-        .resize(resWidth)
-        .toFile(`${output}/${baseName}_${resWidth}.webp`, (err, info) => {
-          // console.log(err, info);
-        })
-        .toFile(`${output}/${baseName}_${resWidth}${ext}`, (err, info) => {
-          // console.log(err, info);
-        });
-    }
-  }
+  // for (const resWidth of resList) {
+  //   if (resWidth < imgWidtgh) {
+  //     images[baseName].push(resWidth)
+  //     sharp(completePath)
+  //       .resize(resWidth)
+  //       .toFile(`${output}/${baseName}_${resWidth}.webp`, (err, info) => {
+  //         // console.log(err, info);
+  //       })
+  //       .toFile(`${output}/${baseName}_${resWidth}${ext}`, (err, info) => {
+  //         // console.log(err, info);
+  //       });
+  //   }
+  // }
   sharp(completePath)
     .toFile(`${output}/${baseName}_1x.webp`, (err, info) => {
       // console.log(err, info);
@@ -65,6 +65,6 @@ for (const projectDir of projectDirs) {
   }
 }
 
-console.log(images)
+// console.log(images)
 
-fs.writeFileSync('./static/imgList.json', JSON.stringify(images))
+// fs.writeFileSync('./static/imgList.json', JSON.stringify(images))
