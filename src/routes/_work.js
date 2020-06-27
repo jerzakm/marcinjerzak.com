@@ -24,7 +24,7 @@ export function getWork() {
     const previewFiles = fs.readdirSync(`${directoryPath}/${file}`)
     for (const previewFile of previewFiles) {
       if (PREVIEW_EXTENSIONS.includes(path.extname(previewFile))) {
-        workEntry.preview.push(`work_preview/${previewFile}`)
+        workEntry.preview.push(`${previewFile}`)
       }
     }
     workList.push(workEntry)

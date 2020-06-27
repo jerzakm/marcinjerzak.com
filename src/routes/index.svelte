@@ -97,6 +97,7 @@
 <script>
   import SimpleIcon from "../components/SimpleIcon.svelte";
   import ProjectsContainer from "../components/projects/ProjectContainer.svelte";
+  import Image from "../components/Image.svelte";
   export let contact;
   export let work;
 </script>
@@ -106,7 +107,8 @@
 </svelte:head>
 
 <div class="home-image-container">
-  <img src="home_abstract.png" alt="preview" class="home-image" />
+  <!-- <img src="home_abstract.png" alt="preview" class="home-image" /> -->
+  <Image src="{`home_abstract.png`}" />
 </div>
 
 <section class="home-container">

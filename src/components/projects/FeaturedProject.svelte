@@ -93,10 +93,9 @@
 <script>
   import MdDesktopWindows from "svelte-icons/md/MdDesktopWindows.svelte";
   import MdCode from "svelte-icons/md/MdCode.svelte";
+  import Image from "../Image.svelte";
 
   export let project;
-
-  console.log(project);
 </script>
 
 <div class="container">
@@ -133,7 +132,9 @@
     </div>
     <div class="preview-content">
       {#if project.preview && project.preview.length > 0}
-        <img src="{project.preview[0]}" alt="preview" class="preview-img" />
+        <Image src="{project.preview[0]}" />
+        <!-- <Image src="{`home_abstract.png`}" /> -->
+        <!-- <img src="{project.preview[0]}" alt="preview" class="preview-img" /> -->
       {/if}
     </div>
   </div>
