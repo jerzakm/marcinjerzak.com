@@ -9,6 +9,7 @@ const imgFiles = fs.readdirSync("./content/images");
 const resList = [320, 640, 960, 1280];
 
 const imgExtensions = [".jpg", ".png", ".jpeg", ".webp"];
+let images = {}
 
 const resizeImage = (file, dir, output) => {
   const ext = path.extname(file);
@@ -16,8 +17,13 @@ const resizeImage = (file, dir, output) => {
   const completePath = `${dir}/${file}`;
   const imgWidtgh = sizeOf(completePath).width;
 
+  images[baseName] = []
+
+
+
   for (const resWidth of resList) {
     if (resWidth < imgWidtgh) {
+      images[baseName].push(resWidth)
       sharp(completePath)
         .resize(resWidth)
         .toFile(`${output}/${baseName}_${resWidth}.webp`, (err, info) => {
@@ -58,3 +64,7 @@ for (const projectDir of projectDirs) {
     }
   }
 }
+
+console.log(images)
+
+fs.writeFileSync('./static/imgList.json', JSON.stringify(images))

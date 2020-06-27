@@ -7,6 +7,7 @@
 
 <script>
   export let src;
+  import { onMount } from "svelte";
 
   const fileName = src
     .split(".")
@@ -15,14 +16,36 @@
 
   const ext = src.substring(src.lastIndexOf(".") + 1, src.length) || src;
 
-  console.log(ext);
+  let imgElement;
+
+  let loadImage;
+
+  onMount(() => {
+    let observerCallback = function(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadImage = true;
+          observer.unobserve(imgElement);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback);
+    observer.observe(imgElement);
+
+    return () => {
+      observer.unobserve(imgElement);
+    };
+  });
 </script>
 
-<picture>
-  <source srcset="{`images/${fileName}_1x.webp`}" type="image/webp" />
-  <source
-    srcset="{`images/${fileName}_1x.${ext}`}"
-    type="image/{ext == 'jpg' ? 'jpeg' : 'png'}"
-  />
-  <img src="{`images/${src}`}" alt="Alt Text!" class="picture" />
+<picture bind:this="{imgElement}">
+  {#if loadImage}
+    <source srcset="{`images/${fileName}_1x.webp`}" type="image/webp" />
+    <source
+      srcset="{`images/${fileName}_1x.${ext}`}"
+      type="image/{ext == 'jpg' ? 'jpeg' : 'png'}"
+    />
+    <img src="{`images/${src}`}" alt="Alt Text!" class="picture" />
+  {/if}
 </picture>

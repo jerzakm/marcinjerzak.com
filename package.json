@@ -14,9 +14,9 @@
   },
   "homepage": "https://github.com/jerzakm/marcinjerzak.com#readme",
   "scripts": {
-    "dev": "sapper dev",
-    "build": "sapper build",
-    "export": "sapper export",
+    "dev": "node imgResizer.js && sapper dev",
+    "build": "node imgResizer.js && sapper build",
+    "export": "node imgResizer.js && sapper export",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
