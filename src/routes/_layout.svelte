@@ -12,7 +12,6 @@
   import WaterBg from "./../components/WaterBg.svelte";
   import Nav from "../components/Nav.svelte";
   import { onMount } from "svelte";
-  export let imgList;
 
   let mounted;
 
@@ -22,7 +21,6 @@
 
 <Nav segment="segment" />
 <WaterBg />
-
 <main>
   <slot />
 </main>

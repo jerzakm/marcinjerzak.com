@@ -6,10 +6,8 @@
     min-height: 99vh;
     display: grid;
     grid-template-columns: 0% 100%;
-    animation: text-focus-in 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 
     @media screen and (min-width: 1000px) {
-      // margin-top: -2.5rem;
       grid-template-columns: 35% 65%;
     }
   }
@@ -31,26 +29,19 @@
 
   .home-image-container {
     position: absolute;
-    display: flex;
+    display: none;
     overflow: hidden;
     max-width: 95vw;
     height: 100vh;
-  }
 
-  .home-image {
-    align-self: baseline;
-
-    // object-fit: cover;
-    // position: absolute;
-    // top: 2vh;
-    // left: 2vw;
-    // filter: invert(1);
-    // max-width: 100vw;
     max-height: 90vh;
-    margin-left: -3rem;
     opacity: 0.3;
+    @media screen and (min-width: 700px) {
+      display: flex;
+    }
     @media screen and (min-width: 1200px) {
       // margin-top: -2.5rem;
+      margin-left: -3rem;
       max-width: 60vw;
       max-height: 85vh;
       opacity: 0.93;
@@ -84,7 +75,7 @@
       return {
         contact: contactData.meta,
         home: homeData.meta,
-        work: workData
+        work: workData,
       };
     } else {
       this.error(contactRes.status, contactData.message);
@@ -107,7 +98,6 @@
 </svelte:head>
 
 <div class="home-image-container">
-  <!-- <img src="home_abstract.png" alt="preview" class="home-image" /> -->
   <Image src="{`home_abstract.png`}" />
 </div>
 
@@ -128,17 +118,17 @@
         url="{contact.GitHub}"
         color="{`#121212`}"
       />
-      <SimpleIcon
+      <!-- <SimpleIcon
         icon="{'Twitter'}"
         url="{contact.Twitter}"
         color="{`#121212`}"
-      />
+      /> -->
       <SimpleIcon
         icon="{'dev.to'}"
         url="{contact['dev.to']}"
         color="{`#121212`}"
       />
-      <SimpleIcon
+      <!-- <SimpleIcon
         icon="{'Itch.io'}"
         url="{contact['Itch.io']}"
         color="{`#121212`}"
@@ -147,7 +137,7 @@
         icon="{'LinkedIn'}"
         url="{contact.LinkedIn}"
         color="{`#121212`}"
-      />
+      /> -->
     </div>
   </div>
 </section>
